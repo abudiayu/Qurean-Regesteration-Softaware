@@ -1,0 +1,44 @@
+/* ── Global resets & mobile-first base ─────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fdf8ed;
+  color: #1a1a1a;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* iPhone safe area support */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+button { font-family: inherit; cursor: pointer; }
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Remove tap highlight on mobile */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* ── Safe area for mobile bottom nav ───────────────────── */
+.db-mobile-nav {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ── Prevent content being hidden behind bottom nav ─────── */
+@media (max-width: 768px) {
+  .db-main {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+}
